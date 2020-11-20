@@ -1,0 +1,25 @@
+---
+title: "funpart_intro"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{funpart_intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## FunPart:Deciphering and characterizing functional heterogeneity in single cell data
+
+#### FunPart split the data based on subsets of functionally relevant genes set to accurately identify functionally distinct subpopulations.
+
+###### Authors: Celine Barlier (maintainer: celine.barlier@uni.lu), Alexey Samosyuk, Samyukta Chillara
+
+```{r setup}
+library(funpart)
+```

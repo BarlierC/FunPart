@@ -1,0 +1,27 @@
+Package: funpart
+Type: Package
+Title: Functional splitting based on functionally relevant set of genes
+Version: 1.0
+Date: 2020-08-12
+Author: Celine Barlier
+Maintainer: Celine Barlier <celine.barlier@uni.lu>
+Description: FunPart split the data based on subsets of functionally relevant genes set to accurately identify functionally distinct subpopulations.
+License: /
+Imports:
+    pheatmap,
+    data.tree,
+    igraph,
+    EnvStats,
+    data.table,
+    stringr,
+    clusterProfiler,
+    Seurat,
+    Matrix,
+    doParallel,
+    foreach,
+    WGCNA
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
