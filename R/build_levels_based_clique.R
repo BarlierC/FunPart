@@ -23,9 +23,9 @@ build_levels_based_clique <-
     nc_actual <- length(unique(dfClust$Cluster))
     
     #For the level - each branch, splitted in two
-    for (i in seq(1,nc_actual)) {
-      if(!i %in% clStop){
-        r <- build_branch_module(dfClust,i,(max(dfClust$Cluster) + 1),scm,scm_nm,clStop,tfs,setGenesHC,goHC,gda,cliqueTargets,adjMethod,cutoff,qtarget,qprobInt,posRatio)
+    for (x in seq(1,nc_actual)) {
+      if(!x %in% clStop){
+        r <- build_branch_module(dfClust,x,(max(dfClust$Cluster) + 1),scm,scm_nm,clStop,tfs,setGenesHC,goHC,gda,cliqueTargets,adjMethod,cutoff,qtarget,qprobInt,posRatio)
         dfClust <- as.data.frame(r[[1]])
         clStop <- r[[2]]
         setGenesHC <- r[[3]]
@@ -33,8 +33,8 @@ build_levels_based_clique <-
         cliqueTargets <- r[[5]]
       }else{
         #if i in clStop: add cell name to pathString if not already present
-        if(length(which(str_detect(dfClust$pathString[which(dfClust$Cluster == i)],dfClust$Cell[which(dfClust$Cluster == i)]) == TRUE)) != length(dfClust$Cell[which(dfClust$Cluster == i)])){
-          dfClust$pathString[which(dfClust$Cluster == i)] <- paste(dfClust$pathString[which(dfClust$Cluster == i)],dfClust$Cell[which(dfClust$Cluster == i)],sep = "/")
+        if(length(which(str_detect(dfClust$pathString[which(dfClust$Cluster == x)],dfClust$Cell[which(dfClust$Cluster == x)]) == TRUE)) != length(dfClust$Cell[which(dfClust$Cluster == x)])){
+          dfClust$pathString[which(dfClust$Cluster == x)] <- paste(dfClust$pathString[which(dfClust$Cluster == x)],dfClust$Cell[which(dfClust$Cluster == x)],sep = "/")
         }else{
           dfClust <- dfClust
         }
@@ -47,4 +47,4 @@ build_levels_based_clique <-
     }else{
       return(list(dfClust,setGenesHC,goHC,cliqueTargets))
     }
-  }
+}

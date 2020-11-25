@@ -4,12 +4,12 @@
 #' @return true or false 
 #' @author Celine Barlier
 compareClk <- 
-  function(v,clk){
-    
-    n <- sapply(clk,function(x){
-      length(intersect(names(x),names(v)))/length(names(x))
-    })
-    
+  function(v,clk,co){
+    if(length(co)>0){clk <- clk[-co]}
+    n <- foreach(i=seq(1,length(clk)),.combine = "c") %dopar% {
+      length(intersect(names(clk[[i]]),names(v)))/length(names(clk[[i]]))
+    }
+
     #Remove 100% = same clique
     n <- n[n<1]
     
@@ -19,4 +19,4 @@ compareClk <-
     }else{
       return(TRUE) #unique 
     }
-  }
+}

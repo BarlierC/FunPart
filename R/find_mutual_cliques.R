@@ -9,7 +9,7 @@
 find_mutual_cliques <-
   function(mtx, tf_list, qtarget, qprobInt, posRatio){
     
-    #Correlation metric to infer the statistical dependencies
+#Correlation metric to infer the statistical dependencies
     m_obj = WGCNA::cor(t(mtx))
     diag(m_obj) <- 0
     
@@ -29,7 +29,7 @@ find_mutual_cliques <-
     g.copy.pos = delete.edges(g,which(E(g)$weight < 0))
     
     #calculate max cliques
-    clk = max_cliques(g.copy.pos, min = 3, max = Inf)
+    clk = max_cliques(g.copy.pos, min = 3, max = 10)
     
     #If some cliques are found
     if(length(clk)!=0){
@@ -38,9 +38,11 @@ find_mutual_cliques <-
       clk = clk[order(sapply(clk,length),decreasing = T)]
       
       #unique cliques 
-      lc <- sapply(clk,function(x){
-        compareClk(x,clk)
-      })
+      co <- c()
+      lc <- sapply(seq_along(clk),function(y,n,i){
+        co <- c(co,n[[i]]) #already compared
+        compareClk(y[[i]],clk,co)
+      },y=clk, n=names(clk))
       uniques_cliques <- clk[which(lc == TRUE)]
       
       #If some unique cliques are found
@@ -168,4 +170,4 @@ find_mutual_cliques <-
     }else{
       return(list()) 
     }
-  }
+}
