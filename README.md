@@ -1,5 +1,8 @@
-![funpart package](https://github.com/BarlierC/FunPart/tree/main/pictures/FunPart_logo.png) 
+![funpart package](pictures/FunPart_logo.png) 
+
 # FunPart
+
+![funpart version](https://img.shields.io/static/v1?label=funpart&message=v1.0&color=green)
 
 FunPart: Deciphering and characterizing functional heterogeneity in single cell data
 
