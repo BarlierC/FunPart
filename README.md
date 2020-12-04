@@ -1,4 +1,4 @@
-![funpart package](https://github.com/BarlierC/FunPart/tree/main/pictures/FunPart_logo.png) 
+![funpart package](pictures/FunPart_logo.png) 
 
 # FunPart
 
