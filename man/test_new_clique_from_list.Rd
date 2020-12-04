@@ -9,6 +9,10 @@ test_new_clique_from_list(scm, best_set_genes_go, incS = 2, cellNum = 5)
 \arguments{
 \item{best_set_genes_go}{details about the genes used}
 
+\item{incS}{clique number to start the search with}
+
+\item{cellNum}{minimum number of cells to be present in a cluster to be considered}
+
 \item{cl}{vector of clusters}
 
 \item{top_set_genes}{set of genes modules used}

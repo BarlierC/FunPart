@@ -10,12 +10,10 @@ run_functional_splitting(
   gda,
   norm = T,
   qtarget = 0.9,
-  adjMethod = "BH",
+  adjMethod = "bonferroni",
   cutoff = 0.05,
   percExp = 10,
-  qExp = 0.25,
-  qprobInt = c(0.025, 0.975),
-  posRatio = 1
+  qExp = 0.05
 )
 }
 \arguments{
@@ -27,6 +25,8 @@ run_functional_splitting(
 
 \item{norm}{T = perform seurat normalization (default), F = do not perform the normalization}
 
+\item{qtarget}{top X target genes to consider for each identified cliques}
+
 \item{adjMethod}{multiple test correction to perform, either BH (default) or bonferroni}
 
 \item{cutoff}{p-adjusted value cutoff for the functional enrichment}
@@ -34,12 +34,6 @@ run_functional_splitting(
 \item{percExp}{percentage of cells a gene needs to be expressed in to be considered}
 
 \item{qExp}{quantile of gene expression that will be considered as too lowly expressed and so removed}
-
-\item{qprobInt}{quantile of interactions to consider as strong and to use for clique identification}
-
-\item{posRatio}{positive ratio strenght inside a clique}
-
-\item{q}{top X target genes to consider for each identified cliques (default = top 1 percent)}
 }
 \value{
 functional_split object

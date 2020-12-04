@@ -4,7 +4,7 @@
 \alias{find_mutual_cliques}
 \title{Identify the best antagonistic pair of cliques}
 \usage{
-find_mutual_cliques(mtx, tf_list, qtarget, qprobInt, posRatio)
+find_mutual_cliques(mtx, tf_list, qtarget)
 }
 \arguments{
 \item{mtx}{single cell matrix cleaned and normalized}
@@ -12,10 +12,6 @@ find_mutual_cliques(mtx, tf_list, qtarget, qprobInt, posRatio)
 \item{tf_list}{vector of TFs}
 
 \item{qtarget}{percentile of positive targets that will appears in the gene modules}
-
-\item{qprobInt}{percentiles/probs for the interactions to be considered as strong and kept for the module identification}
-
-\item{posRatio}{positive ratio filter to consider a module enriched in positive}
 }
 \value{
 list of pairs of negative modules

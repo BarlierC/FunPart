@@ -4,12 +4,14 @@
 \alias{compareClk}
 \title{Identify if a clique is unique}
 \usage{
-compareClk(v, clk)
+compareClk(v, clk, co)
 }
 \arguments{
 \item{v}{vectors of TFs}
 
 \item{clk}{liste of positive cliques}
+
+\item{co}{list of cliques for which the comparisons are already done}
 }
 \value{
 true or false

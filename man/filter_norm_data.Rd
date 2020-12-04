@@ -10,6 +10,10 @@ filter_norm_data(mtx, norm, percExp, qExp)
 \item{mtx}{single cell matrix (cells in columns / genes in rows)}
 
 \item{norm}{perform Seurat's normalization (True) or not (False)}
+
+\item{percExp}{percentage of cells in which the gene has to be expressed to be considered}
+
+\item{qExp}{quantile above which the genes are considered (QC step)}
 }
 \value{
 cleaned (and normalized) matrix
