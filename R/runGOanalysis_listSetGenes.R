@@ -38,7 +38,7 @@ runGOanalysis_listSetGenes <-
         r_set2 <- r_set2[order(r_set2$Count,decreasing = T),]
         
         listSetGenes$GO[i] <- paste(paste(r_set1$ID[1],r_set1$Description[1],sep=" "),paste(r_set2$ID[1],r_set2$Description[1],sep=" "),sep="&")
-        listSetGenes$FC[i] <- (sum(as.numeric(sapply(r_set1$GeneRatio, function(x) eval(parse(text=x)))))/length(r_set1$ID)) * (sum(as.numeric(sapply(r_set2$GeneRatio, function(x) eval(parse(text=x)))))/length(r_set2$ID))
+        listSetGenes$FC[i] <- (sum(as.numeric(sapply(r_set1$GeneRatio, function(x) eval(parse(text=x)))))) * (sum(as.numeric(sapply(r_set2$GeneRatio, function(x) eval(parse(text=x))))))
       }
     }
     

@@ -3,6 +3,8 @@
 #' @param cl vector of clusters
 #' @param top_set_genes set of genes modules used
 #' @param best_set_genes_go details about the genes used
+#' @param incS clique number to start the search with
+#' @param cellNum minimum number of cells to be present in a cluster to be considered
 #' 
 #' @return list of functional_split object elements init
 #' @author Celine Barlier
@@ -30,9 +32,10 @@ test_new_clique_from_list <- function(scm,best_set_genes_go,incS=2,cellNum=5){
     }else if(incS == length(best_set_genes_go$SetGenes)){
       checkSD <- TRUE #break the boucle
       use <- FALSE #no clique corresponds
+      cl <- c()
     }
     incS <- incS + 1
   }
   
-  return(list(use,mhc,top_set_genes,incS))
+  return(list(use,mhc,top_set_genes,incS,cl))
 }

@@ -1,6 +1,7 @@
 #' Identify if a clique is unique
 #' @param v vectors of TFs
 #' @param clk liste of positive cliques
+#' @param co list of cliques for which the comparisons are already done
 #' @return true or false 
 #' @author Celine Barlier
 compareClk <- 
@@ -19,4 +20,4 @@ compareClk <-
     }else{
       return(TRUE) #unique 
     }
-}
+  }

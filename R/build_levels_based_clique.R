@@ -20,7 +20,7 @@ build_levels_based_clique <-
   function(dfClust,scm,scm_nm,firstLevel,clStop,lev=2,tfs,setGenesHC,goHC,gda,cliqueTargets,adjMethod,cutoff,qtarget,qprobInt,posRatio){
     
     #Check how many clusters - to know the level : level = # clusters / 2
-    nc_actual <- length(unique(dfClust$Cluster))
+    nc_actual <- length(unique(as.numeric(as.factor(dfClust$finalOutput))))
     
     #For the level - each branch, splitted in two
     for (x in seq(1,nc_actual)) {
@@ -47,4 +47,4 @@ build_levels_based_clique <-
     }else{
       return(list(dfClust,setGenesHC,goHC,cliqueTargets))
     }
-}
+  }
