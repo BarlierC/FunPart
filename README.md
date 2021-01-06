@@ -2,7 +2,7 @@
 
 # FunPart
 
-![funpart version](https://img.shields.io/static/v1?label=funpart&message=v1.0&color=green)
+![funpart version](https://img.shields.io/static/v1?label=funpart&message=v1.0&color=green) ![funpart licence](https://img.shields.io/badge/licence-GPL-blue)
 
 FunPart: Deciphering and characterizing functional heterogeneity in single cell data
 
