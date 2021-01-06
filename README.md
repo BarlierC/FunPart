@@ -15,7 +15,7 @@ FunPart is a computational tool that partitions heterogeneous cell populations i
 ```R
 install.packages("devtools")
 library("devtools")
-install_github(“BarlierC/FunPart”)
+install_github("BarlierC/FunPart")
 ```
 
 ## HOW TO USE IT
