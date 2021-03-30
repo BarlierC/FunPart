@@ -14,6 +14,7 @@ init_obj <- function(cl,top_set_genes,best_set_genes_go,cliqueRes){
     dfClust$pathString[which(dfClust$Cluster == 2)] <- "allCells/2"
     dfClust$finalOutput[which(dfClust$Cluster == 1)] <- "0"
     dfClust$finalOutput[which(dfClust$Cluster == 2)] <- "1"
+    
     #Set of genes for each split
     setGenesHC <- list()
     setGenesHC[["1|0"]] <- top_set_genes

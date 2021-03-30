@@ -141,5 +141,8 @@ run_functional_splitting <- function(scm,tfs,gda,norm=T,qtarget=0.90,adjMethod="
       #Empty Object
       functional_res <- build_object(list(),scm)
     }
+    #Update FunPart structure
+    functional_res <- fillEnrichFunPartObj(functional_res,scm_nm,gda,adjMethod,cutoff)
+
     return(functional_res)
   }
