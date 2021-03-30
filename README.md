@@ -8,7 +8,7 @@
 
 FunPart is a computational tool that partitions heterogeneous cell populations into functionally distinct subpopulations and simultaneously identifies modules of functionally relevant set of genes for each of them.
 
-## HOW TO INSTALL IT
+## How to install it
 
 #### Installation of FunPart using Devtools
 
@@ -18,7 +18,7 @@ library("devtools")
 install_github("BarlierC/FunPart")
 ```
 
-## HOW TO USE IT
+## How to use it
 
 ```R
 
@@ -59,3 +59,13 @@ data(mouse_tfs)
 res <- run_functional_splitting(data_exp,mouse_tfs$Symbol,gda)
 
 ```
+
+## Result object
+
+The output is an **object of class 'functionalSplitting'** composed of **6 slots**:
+1. **data** - *contains the filtered and normalized matrix used to perform the analysis*
+2. **clust** - *contains the functional cell states identified*
+3. **genesets** - *list containing all the genes used to split each level*
+4. **cliques** - *list of TFs cliques and genes identified for each branch C1 or C2 and each level*
+5. **functionalenrich** - *list of all the significant functional enrichment found for each genes modules*
+6. **modules** - *list of all the genes modules identified*
