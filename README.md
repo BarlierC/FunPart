@@ -2,32 +2,27 @@
 
 # FunPart
 
-![funpart version](https://img.shields.io/static/v1?label=funpart&message=v1.0&color=green)
+![funpart version](https://img.shields.io/static/v1?label=funpart&message=v1.0&color=green) ![funpart licence](https://img.shields.io/badge/licence-GPL-blue)
 
-FunPart: Deciphering and characterizing functional heterogeneity in single cell data
+#### FunPart: Deciphering and characterizing functional heterogeneity in single cell data
 
 FunPart is a computational tool that partitions heterogeneous cell populations into functionally distinct subpopulations and simultaneously identifies modules of functionally relevant set of genes for each of them.
 
-## INSTALLATIONS
+## HOW TO INSTALL IT
 
-#### Installation of devtools from CRAN
+#### Installation of FunPart using Devtools
 
+```R
 install.packages("devtools")
-
 library("devtools")
+install_github("BarlierC/FunPart")
+```
 
-#### Installation of FunPart R package using Devtools
-
-
-
-
-### EXAMPLES
+## HOW TO USE IT
 
 ```R
 
-# Load the packages and dependencies
-
-require(funpart)
+# Load packages and dependencies
 library(pheatmap)
 require(data.tree)
 require("plyr")
@@ -41,25 +36,26 @@ library(doParallel)
 library(foreach)
 require(Seurat)
 library(WGCNA)
+require(funpart)
 
-#Set seed
-set.seed(1234)
-clustnum <- parallel::makeCluster(5)
+#Parallel background, using 4 cores
+clustnum <- parallel::makeCluster(4)
 doParallel::registerDoParallel(clustnum)
 
 options(stringsAsFactors = FALSE)
 
+# Load necessary data to run FunPart
 
-# Load data necessary to run FunPart
-# Mouse Biological Processes (GO) annotation file (gda)
+# 1) The annotation file: annotated immune modules by Singhania et al. (https://doi.org/10.1038/s41467-019-10601-6) 
 data(gda)
-# Mouse TFs 
+
+# 2) Mouse Transcription factors 
 data(mouse_tfs)
 
-#Load your data: cells in columns, genes in rows
+# 3) Your data (matrix or dataframe with cells in columns and genes in rows)
 #data_exp
 
-#Run the Funtional Splitting with default parameters
+#Run FunPart with default parameters
 res <- run_functional_splitting(data_exp,mouse_tfs$Symbol,gda)
 
 ```
